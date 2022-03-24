@@ -21,7 +21,8 @@ FrAdmin.Net基于ZrAdmin.Net将原有element-ui改版为ant-design,后端进行�
 - 
 
 ```
-
+UserName:admin
+Password:123456
 ```
 ## 🍁前端技术
 Vue版前端技术栈 ：基于vue、vuex、vue-router 、vue-cli 、axios 和 element-ui，前端采用vscode工具开发
@@ -112,3 +113,4 @@ Vue版前端技术栈 ：基于vue、vuex、vue-router 、vue-cli 、axios 和 e
 
 ## 源码地址
 - [Gitee](https://gitee.com/billzh/mc-dull.git)
+- [Github](https://github.com/billzhuh/McDull.git)
