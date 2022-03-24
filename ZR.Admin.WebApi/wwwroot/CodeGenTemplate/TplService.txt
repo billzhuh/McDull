@@ -1,0 +1,96 @@
+﻿using Infrastructure;
+using Infrastructure.Attribute;
+using ${options.ModelsNamespace};
+using ${options.ModelsNamespace}.Dto;
+using ${options.ModelsNamespace}.Models;
+using ${options.IRepositoriesNamespace};
+using ${options.IServicsNamespace}.${options.SubNamespace}.I${options.SubNamespace}Service;
+using System;
+using SqlSugar;
+using System.Collections.Generic;
+
+namespace ${options.ServicesNamespace}.${options.SubNamespace}
+{
+    /// <summary>
+    /// ${genTable.FunctionName}Service业务层处理
+    ///
+    /// @author ${replaceDto.Author}
+    /// @date ${replaceDto.AddTime}
+    /// </summary>
+    [AppService(ServiceType = typeof(I${replaceDto.ModelTypeName}Service), ServiceLifetime = LifeTime.Transient)]
+    public class ${replaceDto.ModelTypeName}Service : BaseService<${replaceDto.ModelTypeName}>, I${replaceDto.ModelTypeName}Service
+    {
+        private readonly ${replaceDto.ModelTypeName}Repository _${replaceDto.ModelTypeName}repository;
+        public ${replaceDto.ModelTypeName}Service(${replaceDto.ModelTypeName}Repository repository) : base(repository)
+        {
+            _${replaceDto.ModelTypeName}repository = repository;
+        }
+
+        #region 业务逻辑代码
+
+        /// <summary>
+        /// 查询${genTable.FunctionName}列表
+        /// </summary>
+        /// <param name="parm"></param>
+        /// <returns></returns>
+        public PagedInfo<${replaceDto.ModelTypeName}> GetList(${replaceDto.ModelTypeName}QueryDto parm)
+        {
+            //开始拼装查询条件
+            var predicate = Expressionable.Create<${replaceDto.ModelTypeName}>();
+
+            //搜索条件查询语法参考Sqlsugar
+$foreach(column in genTable.Columns)
+$if(column.IsQuery)
+$if(column.CsharpType == "string")
+            predicate = predicate.AndIF(!string.IsNullOrEmpty(parm.${column.CsharpField}), ${codeTool.QueryExp(column.CsharpField, column.QueryType)};
+$elseif(column.CsharpType == "DateTime")
+            predicate = predicate.AndIF(parm.Begin${column.CsharpField} == null, it => it.${column.CsharpField} >= DateTime.Now.AddDays(-1));
+            predicate = predicate.AndIF(parm.Begin${column.CsharpField} != null, it => it.${column.CsharpField} >= parm.Begin${column.CsharpField} && it.${column.CsharpField} <= parm.End${column.CsharpField});
+$elseif(column.CsharpType == "int" || column.CsharpType == "long")
+            predicate = predicate.AndIF(parm.${column.CsharpField} != null, ${codeTool.QueryExp(column.CsharpField, column.QueryType)};
+$end
+$end
+$end
+$if(genTable.SortField != "" && genTable.SortField != null)
+            var response = _${replaceDto.ModelTypeName}repository
+                .GetPages(predicate.ToExpression(), parm, it => it.${genTable.SortField}, "${genTable.SortType}");
+$else
+            var response = _${replaceDto.ModelTypeName}repository
+                .Queryable()
+                .Where(predicate.ToExpression())
+                .ToPage(parm);
+$end
+            return response;
+        }
+
+$if(genTable.TplCategory == "tree")
+        /// <summary>
+        /// 查询${genTable.FunctionName}树列表
+        /// </summary>
+        /// <param name="parm"></param>
+        /// <returns></returns>
+        public List<${replaceDto.ModelTypeName}> GetTreeList(${replaceDto.ModelTypeName}QueryDto parm)
+        {
+            //开始拼装查询条件
+            var predicate = Expressionable.Create<${replaceDto.ModelTypeName}>();
+
+            //搜索条件查询语法参考Sqlsugar
+$foreach(column in genTable.Columns)
+$if(column.IsQuery)
+$if(column.CsharpType == "string")
+            predicate = predicate.AndIF(!string.IsNullOrEmpty(parm.${column.CsharpField}), ${codeTool.QueryExp(column.CsharpField, column.QueryType)};
+$elseif(column.CsharpType == "int" || column.CsharpType == "long")
+            predicate = predicate.AndIF(parm.${column.CsharpField} != null, ${codeTool.QueryExp(column.CsharpField, column.QueryType)};
+$end
+$end
+$end
+
+            var response = _${replaceDto.ModelTypeName}repository.Queryable().Where(predicate.ToExpression())
+                .ToTree(it => it.Children, it => it.${genTable.TreeParentCode}, 0);
+
+            return response;
+        }
+$end
+        #endregion
+    }
+}

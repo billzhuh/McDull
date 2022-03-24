@@ -1,0 +1,127 @@
+﻿@using Swashbuckle.AspNetCore.Swagger;
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Swagger API文档代码文件</title>
+    <style type='text/css'>
+
+        table, table td, table th {
+            border: 1px solid #000000;
+            border-collapse: collapse;
+        }
+
+        table {
+            table-layout: fixed;
+            word-break: break-all;
+        }
+
+        tr {
+            height: 20px;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div style='width:1000px; margin: 0 auto'>
+        <span><i>Word接口文档</i></span>
+        <h1 align="center">@Model.Info.Title</h1>
+        <h1 align="center">接口文档 @Model.Info.Version</h1>
+        <h4>联系方式</h4>
+        <span>作者：@Model.Info.Contact.Name</span>
+        <br>
+        <a href="mailto:@Model.Info.Contact.Email" rel="noopener noreferrer" class="link">Send email to Xunit.Core</a>
+        <br>
+        <a href="@Model.Info.Contact.Url" target="_blank" rel="noopener noreferrer" class="link">@Model.Info.Contact.Name - Website</a>
+        <br>
+        <h3>接口描述</h3>
+        <span>@Model.Info.Description</span>
+        <br>
+        <table border='1' cellspacing='0' cellpadding='0' style="table-layout: fixed; word-break: break-all;border: 1px solid #000000;border-collapse: collapse;" width='100%'>
+            <tr style="border: 1px solid #000000;border-collapse: collapse;">
+                <td align="center" style="background-color: rgb(84, 127, 177);">说明</td>
+                <td></td>
+            </tr>
+            <tr style="border: 1px solid #000000;border-collapse: collapse;">
+                <td align="center" style="background-color: rgb(84, 127, 177);">类型</td>
+                <td></td>
+            </tr>
+
+        </table>
+        @foreach (var item in Model.Paths)
+        {
+            if (item.Value.Operations != null)
+            {
+                foreach (var operation in item.Value.Operations)
+                {
+                    <h3>@operation.Value.Summary</h3>
+                    <table border='1' cellspacing='0' cellpadding='0' width='100%' style="table-layout: fixed; word-break: break-all;border: 1px solid #000000;border-collapse: collapse;">
+                        <tr style="background-color: rgb(84, 127, 177);" align="center">
+                            <td colspan='5'></td>
+                        </tr>
+                     
+                        <tr style="border: 1px solid #000000;border-collapse: collapse;">
+                            <td style="border: 1px solid #000000;border-collapse: collapse;">URL</td>
+                            <td colspan='4'>@item.Key</td>
+                        </tr>
+                        <tr style="border: 1px solid #000000;border-collapse: collapse;">
+                            <td style="border: 1px solid #000000;border-collapse: collapse;">请求方式</td>
+                            <td colspan='4'>
+                                @operation.Key
+                            </td>
+                        </tr>
+                       
+                        @if (operation.Value.Parameters != null && operation.Value.Parameters.Count > 0)
+                        {
+                            <tr style="background-color: rgb(84, 127, 177);" align='center'>
+                                <td style="border: 1px solid #000000;border-collapse: collapse;">参数名</td>
+                                <td style="border: 1px solid #000000;border-collapse: collapse;">参数类型</td>
+                                <td style="border: 1px solid #000000;border-collapse: collapse;">是否必填</td>
+                                <td style="border: 1px solid #000000;border-collapse: collapse;" colspan='2'>说明</td>
+                            </tr>
+                            @foreach (var param in operation.Value.Parameters)
+                            {
+                                <tr align='center' style="border: 1px solid #000000;border-collapse: collapse;">
+                                    <td style="border: 1px solid #000000;border-collapse: collapse;">@param.Name</td>
+                                    <td style="border: 1px solid #000000;border-collapse: collapse;">@param.In</td>
+                                    <td style="border: 1px solid #000000;border-collapse: collapse;">@param.Required</td>
+                                    <td style="border: 1px solid #000000;border-collapse: collapse;" colspan='2'>@param.Description</td>
+                                </tr>
+                            }
+                        }
+
+                        <tr style="background-color: rgb(84, 127, 177);" align='center'>
+                            <td style="border: 1px solid #000000;border-collapse: collapse;">状态码</td>
+                            <td style="border: 1px solid #000000;border-collapse: collapse;" colspan='4'>说明</td>
+                        </tr>
+                        @if (operation.Value.Responses != null && operation.Value.Responses.Count > 0)
+                        {
+                            foreach (var response in operation.Value.Responses)
+                            {
+                                <tr align='center' style="border: 1px solid #000000;border-collapse: collapse;">
+                                    <td style="border: 1px solid #000000;border-collapse: collapse;">@response.Key</td>
+                                    <td style="border: 1px solid #000000;border-collapse: collapse;" colspan='4'>@response.Value.Description</td>
+                                </tr>
+
+                            }
+                        }
+                        <tr style="background-color: rgb(84, 127, 177);">
+                            <td style="border: 1px solid #000000;border-collapse: collapse;" colspan='5'>示例</td>
+                        </tr>
+                        <tr style="height: 40px;" style="border: 1px solid #000000;border-collapse: collapse;">
+                            <td style="background-color: rgb(84, 127, 177);">请求参数</td>
+                            <td style="border: 1px solid #000000;border-collapse: collapse;" colspan='4'></td>
+                        </tr>
+                        <tr style="height: 40px;" style="border: 1px solid #000000;border-collapse: collapse;">
+                            <td style="background-color: rgb(84, 127, 177);">返回值</td>
+                            <td style="border: 1px solid #000000;border-collapse: collapse;" colspan='4'></td>
+                        </tr>
+                    </table>
+                    <br>
+                }
+
+            }
+            
+        }
+    </div>
+</body>
+</html>
