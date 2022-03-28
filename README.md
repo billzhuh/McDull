@@ -72,21 +72,21 @@ Vue版前端技术栈 ：基于vue、vuex、vue-router 、vue-cli 、axios 和 e
 
 <table>
     <tr>
-        <td><img src="https://gitee.com/billzh/mc-dull/raw/master/document/images/1.PNG"/></td>
-        <td><img src="https://gitee.com/billzh/mc-dull/raw/master/document/images/2.PNG"/></td>
+        <td><img src="https://raw.githubusercontent.com/billzhuh/McDull/main/document/images/7.PNG"/></td>
+        <td><img src="https://raw.githubusercontent.com/billzhuh/McDull/main/document/images/1.PNG"/></td>
     </tr>
 <tr>
-        <td><img src="https://gitee.com/billzh/mc-dull/raw/master/document/images/3.PNG"/></td>
-        <td><img src="https://gitee.com/billzh/mc-dull/raw/master/document/images/4.PNG"/></td>
+        <td><img src="https://raw.githubusercontent.com/billzhuh/McDull/main/document/images/2.PNG"/></td>
+        <td><img src="https://raw.githubusercontent.com/billzhuh/McDull/main/document/images/3.PNG"/></td>
     </tr>
 <tr>
-        <td><img src="https://gitee.com/billzh/mc-dull/raw/master/document/images/5.PNG"/></td>
-        <td><img src="https://gitee.com/billzh/mc-dull/raw/master/document/images/6.PNG"/></td>
+        <td><img src="https://raw.githubusercontent.com/billzhuh/McDull/main/document/images/4.PNG"/></td>
+        <td><img src="https://raw.githubusercontent.com/billzhuh/McDull/main/document/images/5.PNG"/></td>
     </tr>
 
 <tr>
-        <td><img src="https://gitee.com/billzh/mc-dull/raw/master/document/images/7.PNG"/></td>
-        <td><img src="https://gitee.com/billzh/mc-dull/raw/master/document/images/8.PNG"/></td>
+        <td><img src="https://raw.githubusercontent.com/billzhuh/McDull/main/document/images/6.PNG"/></td>
+        <td><img src="https://raw.githubusercontent.com/billzhuh/McDull/main/document/images/8.PNG"/></td>
     </tr>
 </table>
 
@@ -113,4 +113,8 @@ Vue版前端技术栈 ：基于vue、vuex、vue-router 、vue-cli 、axios 和 e
 
 ## 源码地址
 - [Gitee](https://gitee.com/billzh/mc-dull.git)
+<<<<<<< HEAD
 - [Github](https://github.com/billzhuh/McDull.git)
+=======
+- [Github](https://github.com/billzhuh/McDull.git)
+>>>>>>> ac220f8d1b93ad1e820136234462fc821b7883dd
