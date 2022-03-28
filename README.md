@@ -113,8 +113,7 @@ Vue版前端技术栈 ：基于vue、vuex、vue-router 、vue-cli 、axios 和 e
 
 ## 源码地址
 - [Gitee](https://gitee.com/billzh/mc-dull.git)
-<<<<<<< HEAD
+
 - [Github](https://github.com/billzhuh/McDull.git)
-=======
-- [Github](https://github.com/billzhuh/McDull.git)
+
 >>>>>>> ac220f8d1b93ad1e820136234462fc821b7883dd
