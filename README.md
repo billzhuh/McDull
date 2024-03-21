@@ -72,8 +72,8 @@ Vue版前端技术栈 ：基于vue、vuex、vue-router 、vue-cli 、axios 和 e
 
 <table>
     <tr>
-        <td><img src="https://raw.githubusercontent.com/billzhuh/McDull/main/document/images/7.png"/></td>
-        <td><img src="https://raw.githubusercontent.com/billzhuh/McDull/main/document/images/1.png"/></td>
+        <td><img src="https://gitee.com/billzh/mc-dull/raw/master/document/images/1.PNG"/></td>
+        <td><img src="https://gitee.com/billzh/mc-dull/raw/master/document/images/2.PNG"/></td>
     </tr>
 <tr>
         <td><img src="https://raw.githubusercontent.com/billzhuh/McDull/main/document/images/2.png"/></td>
