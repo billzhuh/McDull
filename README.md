@@ -72,21 +72,21 @@ Vue版前端技术栈 ：基于vue、vuex、vue-router 、vue-cli 、axios 和 e
 
 <table>
     <tr>
-        <td><img src="https://raw.githubusercontent.com/billzhuh/McDull/main/document/images/7.PNG"/></td>
-        <td><img src="https://raw.githubusercontent.com/billzhuh/McDull/main/document/images/1.PNG"/></td>
+        <td><img src="https://raw.githubusercontent.com/billzhuh/McDull/main/document/images/7.png"/></td>
+        <td><img src="https://raw.githubusercontent.com/billzhuh/McDull/main/document/images/1.png"/></td>
     </tr>
 <tr>
-        <td><img src="https://raw.githubusercontent.com/billzhuh/McDull/main/document/images/2.PNG"/></td>
+        <td><img src="https://raw.githubusercontent.com/billzhuh/McDull/main/document/images/2.png"/></td>
         <td><img src="https://raw.githubusercontent.com/billzhuh/McDull/main/document/images/3.PNG"/></td>
     </tr>
 <tr>
-        <td><img src="https://raw.githubusercontent.com/billzhuh/McDull/main/document/images/4.PNG"/></td>
-        <td><img src="https://raw.githubusercontent.com/billzhuh/McDull/main/document/images/5.PNG"/></td>
+        <td><img src="https://raw.githubusercontent.com/billzhuh/McDull/main/document/images/4.png"/></td>
+        <td><img src="https://raw.githubusercontent.com/billzhuh/McDull/main/document/images/5.png"/></td>
     </tr>
 
 <tr>
-        <td><img src="https://raw.githubusercontent.com/billzhuh/McDull/main/document/images/6.PNG"/></td>
-        <td><img src="https://raw.githubusercontent.com/billzhuh/McDull/main/document/images/8.PNG"/></td>
+        <td><img src="https://raw.githubusercontent.com/billzhuh/McDull/main/document/images/6.png"/></td>
+        <td><img src="https://raw.githubusercontent.com/billzhuh/McDull/main/document/images/8.png"/></td>
     </tr>
 </table>
 
